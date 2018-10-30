@@ -1,8 +1,14 @@
 const mongoose = require('../db/connection')
-const Schema = require('../db/schema')
+const Schema = mongoose.Schema
 
-const restaurantModel = mongoose.model('Restaurants', Schema.restaurantSchema)
 
-module.exports = restaurantModel
+const Restaurant = new Schema({
+    name: String,
+    description: String,
+    location: String,
+    price: String,
+})
+
+module.exports = mongoose.model('Restaurant', Restaurant)
 
 

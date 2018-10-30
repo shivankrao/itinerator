@@ -1,3 +1,5 @@
+const express = require('express')
+const router = express.Router()
 const City = require('../models/cities')
 const Activity = require('../models/cities')
 const User = require('../models/users')

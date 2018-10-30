@@ -8,10 +8,9 @@ const User = new Schema({
     headline: String,
     favoriteActivity: [
         {
-            type: String,
-            ref: ""
+            type: Schema.Types.ObjectId,
+            ref: "Activity"
         }
     ]
-
 })
 module.exports = mongoose.model('User', User)

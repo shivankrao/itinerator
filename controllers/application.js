@@ -1,14 +1,19 @@
 const City = require('../models/cities')
 const Activity = require('../models/activities')
 const User = require('../models/users')
+const express = require('express')
+const router = express.Router()
 const Restaurant = require('../models/restaurants')
 
 const applicationController = {
     
     index: (req, res, next) => {
-        City.find()
+        City.find({})
             .then(cities => {
-            res.render('index', { title: 'Itinerator' }, { cities: cities })
+            res.render('index', { 
+                 cities: cities, title: 'Itinerator' 
+            })
+            // res.send(cities)
         })       
     },
     show: (req, res, next) => {

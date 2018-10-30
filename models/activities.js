@@ -1,7 +1,13 @@
 const mongoose = require('../db/connection')
-const Schema = require('../db/schema')
+const Schema = mongoose.Schema
 
-const activitiesModel = mongoose.model('Activities', Schema.activitiesSchema)
+const Activity = new Schema({
+    name: String,
+    description: String,
+    location: String,
+    price: String,
+}) 
+
+module.exports = mongoose.model('Activity', Activity)
 
 
-module.exports = activitiesModel
