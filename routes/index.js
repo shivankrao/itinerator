@@ -6,6 +6,6 @@ const cityController = require('../controllers/city')
 
 /* GET home page. */
 router.get('/', applicationController.index)
-router.get('/new', cityController.new)
+router.get('/new', cityController.create)
 
 module.exports = router;

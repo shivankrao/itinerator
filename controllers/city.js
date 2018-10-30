@@ -5,10 +5,19 @@ const Restaurant = require('../models/restaurants')
 
 const cityController = {
 
- new: (req, res) => {
-    console.log(req.params.id)
-res.render('cities/new')
-},
+ create: (req, res) => {
+    City.create({
+        name: req.body.name,
+        description: req.body.location,
+        activities: req.body.activities,
+        restaurants: req.body.restaurants,
+        img: req.body.img,
+
+    }).then(cities => {
+
+      res.redirect(`/city/${cities._id}`)
+    })
+  },
 
 }
 

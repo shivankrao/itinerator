@@ -18,7 +18,7 @@ const restaurantSchema = new Schema({
 const citySchema = new Schema({
 	name: String,
 	description: String,
-    thingToDo: [activitiesSchema],
+    activities: [activitiesSchema],
     restaurants: [restaurantSchema],
 	img: String,
 })
