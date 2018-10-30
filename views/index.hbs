@@ -4,18 +4,22 @@
 <p class="text-light">Don't see your city listed? Add it <a href="cities/new">here</a> and suggest an activity</p>
 
 <br>
-<div class="container">
+
+{{#each cities}}
+<div class="city-container">
+<a href="/{{name}}"><img class="img-responsive" src="{{img}}" alt=""></a>
   <div class="row">
 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
-        <img class="img-responsive" src="./images/nyc.jpg" alt=" ">
         <div class="overlay">
-           <h2>New York</h2>
+           <h2>{{_id}}</h2>
            <a class="info" href="#">take me there!</a>
         </div>
     </div>
 </div>
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    {{/each}}
+
+{{!-- <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
         <img class="img-responsive" src="/images/atlanta.jpg" alt="">
         <div class="overlay">
@@ -76,4 +80,4 @@
     </div>
 </div>
  </div>
-</div>
+</div> --}}

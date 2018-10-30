@@ -1,24 +1,12 @@
 const City = require('../models/cities')
-const Activity = require('../models/cities')
+const Activity = require('../models/activities')
 const User = require('../models/users')
 const Restaurant = require('../models/restaurants')
 
 const cityController = {
 
- create: (req, res) => {
-    City.create({
-        name: req.body.name,
-        description: req.body.location,
-        activities: req.body.activities,
-        restaurants: req.body.restaurants,
-        img: req.body.img,
-
-    }).then(cities => {
-
-      res.redirect(`/city/${cities._id}`)
-    })
-  },
-
+    new: (req, res) => {
+        res.render('cities/new' , { title: 'Itinerator' })
+    },
 }
-
 module.exports = cityController

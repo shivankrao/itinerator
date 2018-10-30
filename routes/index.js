@@ -4,8 +4,10 @@ const applicationController = require('../controllers/application')
 const cityController = require('../controllers/city')
 
 
-/* GET home page. */
+//Home page
 router.get('/', applicationController.index)
-router.get('/new', cityController.create)
+
+//Add new city
+router.get('/cities/new', cityController.new)
 
 module.exports = router;
