@@ -9,7 +9,7 @@ const User = new Schema({
     favoriteActivity: [
         {
             type: String,
-            ref: "Wingspot"
+            ref: ""
         }
     ]
 
