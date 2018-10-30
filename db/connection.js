@@ -1,5 +1,9 @@
 const mongoose = require('mongoose');
 require('dotenv').config()
+
+//Configure mongoose's promise to global promise
+mongoose.promise = global.Promise;
+
 mongoose.connect(process.env.MONGODB_URI); 
 
 mongoose.connect('mongodb://localhost/store-samples')

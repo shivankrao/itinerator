@@ -1,8 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-
-const thingsToDoSchema = new Schema({
+const activitiesSchema = new Schema({
     name: String,
     description: String,
     location: String,
@@ -19,13 +18,13 @@ const restaurantSchema = new Schema({
 const citySchema = new Schema({
 	name: String,
 	description: String,
-    thingToDo: [thingsToDoSchema],
+    thingToDo: [activitiesSchema],
     restaurants: [restaurantSchema],
 	img: String,
 })
 
 module.exports = {
-    thingsToDoSchema,
+    activitiesSchema,
     restaurantSchema,
     citySchema
 }

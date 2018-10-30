@@ -1,9 +1,9 @@
-const Cities = require('../models/Cities')
+const Cities = require('../models/cities')
 
 const newCity = [
 	{
 		title: "New York City",
-		description: "It is rice that is fried",
+		description: "",
 		instructions: "rice fried",
 		ingredients: "rice",
 		img: " "
