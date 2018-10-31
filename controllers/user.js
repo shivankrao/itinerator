@@ -62,7 +62,15 @@ update: (req, res) => {
     })
   },
 
-
+//Delete user
+delete: (req, res) => {
+    User.findByIdAndRemove(req.params.id).then(() => {
+      res.redirect('/')
+    })
+    .catch((err) => {
+        console.log(err)
+    })
+  }
 
 
 }
