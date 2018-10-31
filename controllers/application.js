@@ -2,7 +2,7 @@ const City = require('../models/cities')
 const Activity = require('../models/activities')
 const User = require('../models/users')
 
-const Restaurant = require('../models/restaurants')
+// const Restaurant = require('../models/restaurants')
 
 const applicationController = {
     
@@ -18,7 +18,12 @@ const applicationController = {
     show: (req, res, next) => {
         res.render('about', { title: 'Itinerator' });
  
-}
+},
+
+    create: (req, res) => {
+    City.create(req.body).then(newCity =>
+        res.redirect(`/${newCity._id}`))
+    },
 
 }
 

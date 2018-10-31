@@ -3,7 +3,7 @@ const router = express.Router()
 const City = require('../models/cities')
 const Activity = require('../models/activities')
 const User = require('../models/users')
-const Restaurant = require('../models/restaurants')
+// const Restaurant = require('../models/restaurants')
 
 const activityController = { 
     show: (req, res) => {
