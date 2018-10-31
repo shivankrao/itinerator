@@ -1,8 +1,7 @@
 const City = require('../models/cities')
 const Activity = require('../models/activities')
 const User = require('../models/users')
-const express = require('express')
-const router = express.Router()
+
 const Restaurant = require('../models/restaurants')
 
 const applicationController = {

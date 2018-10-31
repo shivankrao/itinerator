@@ -1,0 +1,19 @@
+<main>
+
+    <div class="city-container-show">
+        <header>
+            <h2> {{cities.name}} </h2>
+        </header>
+        <img src="{{cities.img}}" alt="">
+        <p>{{cities.description}} </p>
+        <p>{{cities.activities}} </p>
+        <p>{{cities.restaurants}} </p>
+    </div>
+    <div class="city-show-functions">
+        <a href="/{{cities._id}}/edit"><button>Edit this city</button></a>
+	    <form action="/{{cities._id}}?_method=DELETE" method="POST">
+	        <button type="submit">Delete this city</button>
+	    </form>
+    </div>
+
+</main>

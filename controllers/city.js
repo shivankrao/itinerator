@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const City = require('../models/cities')
-const Activity = require('../models/cities')
+const Activity = require('../models/activities')
 const User = require('../models/users')
 const Restaurant = require('../models/restaurants')
 
@@ -16,11 +16,14 @@ const cityController = {
     const citiesId = req.params.citiesId
     City.findById(citiesId).populate().then((cities) => {
       res.render('cities/show', {
-        cities: cities
-      })
+        cities: cities, title: 'Itinerator' 
     })
-  },
+    // res.send(cities)
+})       
+},
 
+    
 }
+
 
 module.exports = cityController

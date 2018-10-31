@@ -57,7 +57,7 @@ const madRest1 = new Restaurant({
 
 //ACTIVITIES DUMMY DATA
 //NYC ACTIVITIES
-const cloisters = new Activity({
+const nycAct1 = new Activity({
 
     name: "The Cloisters",
     description: "This annex of the famous Metropolitan Museum of Art is hidden away in the gorgeous Fort Tryon Park. It houses an impressive collection of items dating back to medieval European times including artwork, artifacts, and illuminated manuscripts.",
@@ -66,7 +66,7 @@ const cloisters = new Activity({
 
 })
 
-const smorgasburg = new Activity({
+const nycAct2 = new Activity({
 
     name: "Smorgasburg",
     description: "Smorgasburg is the largest weekly open-air food market in America where over 100 vendors set up stalls to offer visitors a diverse selection of food from all around the world.",
@@ -76,7 +76,7 @@ const smorgasburg = new Activity({
 
 })
 
-const chelseaMarket = new Activity({
+const nycAct3 = new Activity({
 
     name: "Chelsea Market",
     description: "Chelsea Market is a food hall, shopping mall, office building and television production facility located in the Chelsea neighborhood.",
@@ -267,7 +267,7 @@ const nyc = new City({
     name: "New York City",
 	description: "",
     activities: [cloisters, smorgasburg, chelseaMarket],
-    // restaurants: [restaurantSchema],
+    restaurants: [Restaurant],
 	img: "/images/nyc.jpg"
 	})
 
@@ -276,7 +276,7 @@ const atlanta = new City({
     name: "Atlanta",
 	description: "",
     activities: [atlAct1, atlAct2, atlAct3],
-    // restaurants: [restaurantSchema],
+    restaurants: [Restaurant],
 	img: "/images/atlanta.jpg"
     })
     
@@ -285,7 +285,7 @@ const chicago = new City({
         name: "Chicago",
         description: "",
         activities: [chiAct1, chiAct2, chiAct3],
-        // restaurants: [restaurantSchema],
+        restaurants: [Restaurant],
         img: "images/chicago.jpg"
         })
 
@@ -294,7 +294,7 @@ const losAngeles = new City({
         name: "Los Angeles",
         description: "",
         activities: [losAngelesAct1, losAngelesAct2, losAngelesAct3],
-        // restaurants: [restaurantSchema],
+        restaurants: [Restaurant],
         img: "images/losangeles.jpg"
             })
 
@@ -303,7 +303,7 @@ const paris = new City({
     name: "Paris",
 	description: "",
     activities: [parisAct1, parisAct2, parisAct3],
-    // restaurants: [restaurantSchema],
+    restaurants: [Restaurant],
 	img: "images/paris.jpg"
     })
     
@@ -312,7 +312,7 @@ const tokyo = new City({
     name: "Tokyo",
 	description: "",
     activities: [tokyoAct1, tokyoAct2, tokyoAct3],
-    // restaurants: [restaurantSchema],
+    restaurants: [Restaurant],
 	img: "images/tokyo.jpg"
     })
     
@@ -321,16 +321,16 @@ const madrid = new City({
     name: "Madrid",
 	description: "",
     activities: [madridAct1, madridAct2, madridAct3],
-    // restaurants: [restaurantSchema],
+    restaurants: [Restaurant],
 	img: "images/madrid.jpg"
     })
 
 
 
-City.deleteMany({})
+City.remove({})
    .then(() => Activity.deleteMany({}))
    .then(() => Activity.insertMany([nycRest1, atlRest1, chiRest1, laRest1, parisRest1, tokyoRest1, madRest1]))
-   .then(() => Activity.insertMany([cloisters, smorgasburg, chelseaMarket, atlAct1, atlAct2, atlAct3, chiAct1, chiAct2, chiAct3, losAngelesAct1, losAngelesAct2, losAngelesAct3, parisAct1, parisAct2, parisAct3, tokyoAct1, tokyoAct2, tokyoAct3, madridAct1, madridAct2, madridAct3]))
+   .then(() => Activity.insertMany([nycAct1, nycAct2, nycAct3, atlAct1, atlAct2, atlAct3, chiAct1, chiAct2, chiAct3, losAngelesAct1, losAngelesAct2, losAngelesAct3, parisAct1, parisAct2, parisAct3, tokyoAct1, tokyoAct2, tokyoAct3, madridAct1, madridAct2, madridAct3]))
    .then(() => nyc.save())
    .then(() => atlanta.save())
    .then(() => chicago.save())
