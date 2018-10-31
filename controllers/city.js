@@ -10,8 +10,17 @@ const cityController = {
     new: (req, res) => {
         res.render('cities/new', {title: "Itinerator"})
     },
+
+
+    show: (req, res) => {
+    const citiesId = req.params.citiesId
+    City.findById(citiesId).populate().then((cities) => {
+      res.render('cities/show', {
+        cities: cities
+      })
+    })
+  },
+
 }
-
-
 
 module.exports = cityController

@@ -10,4 +10,8 @@ router.get('/', applicationController.index)
 //Add new city
 router.get('/cities/new', cityController.new)
 
+//
+router.get('/cities/:citiesId', cityController.show)
+
+
 module.exports = router;
