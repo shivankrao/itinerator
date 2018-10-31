@@ -1,0 +1,35 @@
+<h3 class="add-new-user">Sign Up</h3>
+
+
+<form class="container" action="/users" method="POST">
+    <div>
+        <label for="name">Your Name</label>
+        <input type="text" name="name">
+    </div>
+    <div>
+        <label for="username">Your Username</label>
+        <input type="text" name="username">
+    </div>
+    <div>
+        <label for="age">Your Age</label>
+        <input type="text" name="age">
+    </div>
+    <div>
+        <label for="location">Your Location</label>
+        <input type="text" name="location">
+    </div>
+    <div>
+        <label for="image">Profile Picture</label>
+        <input type="text" name="image">
+    </div>
+    <div>
+        <label for="bio">Your Favorite Activity</label>
+        <input type="text" name="favorite-activity">
+    </div>
+    <button class="add-user btn waves-effect waves-light" type="submit" name="action">Create account</button>
+
+</form>
+
+<button class="cancel-button btn white-text">
+    <a href="/users">cancel</a>
+</button>

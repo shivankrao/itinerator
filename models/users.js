@@ -3,9 +3,9 @@ const Schema = mongoose.Schema
 
 const User = new Schema({
     name: String,
+    username: String,
     location: String,
     image: String,
-    headline: String,
     favoriteActivity: [
         {
             type: Schema.Types.ObjectId,

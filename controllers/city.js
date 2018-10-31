@@ -12,6 +12,11 @@ const cityController = {
     },
 
 
+    create: (req, res) => {
+    City.create(req.body).then(newCity =>
+        res.redirect(`/${newCity._id}`))
+    },
+
     show: (req, res) => {
     const citiesId = req.params.citiesId
     City.findById(citiesId).populate().then((cities) => {

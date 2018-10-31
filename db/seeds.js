@@ -2,58 +2,8 @@ const mongoose = require('./connection')
 const City = require('../models/cities')
 const Activity = require('../models/activities')
 const User = require('../models/users')
-const Restaurant = require('../models/restaurants')
 
-//RESTAURANTS DUMMY DATA
-//NYC RESTAURANTS
-const nycRest1 = new Restaurant({
-    name: "Los Tacos no. 1",
-    description: "Bustling taqueria serving tacos, quesadillas & aguas frescas in a street-style set-up",
-    location: "String",
-    price: "String",
-})
-//ATL RESTAURANTS
-const atlRest1 = new Restaurant({
-    name: "Los Tacos no. 1",
-    description: "Bustling taqueria serving tacos, quesadillas & aguas frescas in a street-style set-up",
-    location: "String",
-    price: "String",
-})
-//CHICAGO RESTAURANTS
-const chiRest1 = new Restaurant({
-    name: "Los Tacos no. 1",
-    description: "Bustling taqueria serving tacos, quesadillas & aguas frescas in a street-style set-up",
-    location: "String",
-    price: "String",
-})
-//LA RESTAURANTS
-const laRest1 = new Restaurant({
-    name: "Los Tacos no. 1",
-    description: "Bustling taqueria serving tacos, quesadillas & aguas frescas in a street-style set-up",
-    location: "String",
-    price: "String",
-})
-//PARIS RESTAURANTS
-const parisRest1 = new Restaurant({
-    name: "Los Tacos no. 1",
-    description: "Bustling taqueria serving tacos, quesadillas & aguas frescas in a street-style set-up",
-    location: "String",
-    price: "String",
-})
-//TOKYO RESTAURANTS
-const tokyoRest1 = new Restaurant({
-    name: "Los Tacos no. 1",
-    description: "Bustling taqueria serving tacos, quesadillas & aguas frescas in a street-style set-up",
-    location: "String",
-    price: "String",
-})
-//MADRID RESTAURANTS
-const madRest1 = new Restaurant({
-    name: "Los Tacos no. 1",
-    description: "Bustling taqueria serving tacos, quesadillas & aguas frescas in a street-style set-up",
-    location: "String",
-    price: "String",
-})
+
 
 //ACTIVITIES DUMMY DATA
 //NYC ACTIVITIES
@@ -329,7 +279,6 @@ const madrid = new City({
 
 City.remove({})
    .then(() => Activity.deleteMany({}))
-   .then(() => Activity.insertMany([nycRest1, atlRest1, chiRest1, laRest1, parisRest1, tokyoRest1, madRest1]))
    .then(() => Activity.insertMany([nycAct1, nycAct2, nycAct3, atlAct1, atlAct2, atlAct3, chiAct1, chiAct2, chiAct3, losAngelesAct1, losAngelesAct2, losAngelesAct3, parisAct1, parisAct2, parisAct3, tokyoAct1, tokyoAct2, tokyoAct3, madridAct1, madridAct2, madridAct3]))
    .then(() => nyc.save())
    .then(() => atlanta.save())

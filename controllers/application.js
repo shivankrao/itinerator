@@ -20,10 +20,7 @@ const applicationController = {
  
 },
 
-    create: (req, res) => {
-    City.create(req.body).then(newCity =>
-        res.redirect(`/${newCity._id}`))
-    },
+    
 
 }
 
