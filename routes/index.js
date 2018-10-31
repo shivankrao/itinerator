@@ -25,7 +25,7 @@ router.get('/cities/:activitiesId', activityController.show)
 
 //Users
 router.get('/users/index', userController.index)
-
+router.get('/users/new', userController.new)
 
 
 

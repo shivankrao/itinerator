@@ -1,25 +1,30 @@
 const express = require('express')
 const router = express.Router()
-const user = require('../models/users')
+const User = require('../models/users')
 
 
-//GET new user page
+//get users
 
 const userController = {
 
  index: (req, res) => {
-    user.find({})
+    User.find({})
         .then((users) => {
-            console.log("USERS", users)
-            res.render('users/index', {
-                users
-            })
+            res.render('users/index', {title: "Itinerator", users})
         })
         .catch((err) => {
             console.log(err)
         })
-}
+
+
+},
+
+new: (req, res) => {
+    res.render('users/new'), {title: "Itinerator", users}
+},
+
+
+
 
 }
-
 module.exports = userController
