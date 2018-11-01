@@ -268,6 +268,14 @@ const madrid = new City({
 	img: "/images/madrid.jpg"
     })
 
+const singapore = new City({
+
+    name: "Singapore",
+    description: "",
+    activities: [madridAct1, madridAct2, madridAct3],
+    img: "/images/singapore.jpg"
+    })
+
 const john = new User({
 
     name: "John",
@@ -291,5 +299,6 @@ City.remove({})
    .then(() => paris.save())
    .then(() => tokyo.save())
    .then(() => madrid.save())
+   .then(() => singapore.save())
    .then(() => console.log("Database seeded success"))
    .then(() => mongoose.connection.close())
