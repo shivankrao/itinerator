@@ -6,7 +6,7 @@ mongoose.promise = global.Promise;
 
 mongoose.connect(process.env.MONGODB_URI); 
 
-mongoose.connect('mongodb://localhost/store-samples')
+mongoose.connect('mongodb://localhost/itinerator2')
 
 mongoose.connection.once('open', () => {
     console.log(`Mongoose has connected to MongoDB`)

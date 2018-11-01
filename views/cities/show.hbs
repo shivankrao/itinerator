@@ -1,19 +1,32 @@
 <main>
-
+<br>
+<br>
     <div class="city-container-show">
         <header>
-            <h2> {{cities.name}} </h2>
+            <h2 style="text-align:center"> {{cities.name}} </h2>
         </header>
+        <div style="text-align:center">
         <img src="{{cities.img}}" alt="">
+        </div>
+        <br>
         <p>{{cities.description}} </p>
-        <p>{{cities.activities}} </p>
-        <p>{{cities.restaurants}} </p>
+        <h1 style="text-align:center">Activities:</h1>
+        <br>
+        <div style="text-align:center" class="container">
+            <div class = "row">
+        {{#each cities.activities}}
+        <div class="col-md-4">
+        <h3>Name</h3>
+        <p>{{name}} </p>
+        <h2>Location:</h2>
+        <p>{{location}} </p>
+        <h2>Price:</h2>
+        <p>{{price}} </p>
+        </div>
+        {{/each}}
+        </div>
+        </div>
     </div>
-    <div class="city-show-functions">
-        <a href="/{{cities._id}}/edit"><button>Edit this city</button></a>
-	    <form action="/{{cities._id}}?_method=DELETE" method="POST">
-	        <button type="submit">Delete this city</button>
-	    </form>
-    </div>
+   
 
 </main>

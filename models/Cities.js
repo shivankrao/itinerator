@@ -12,12 +12,7 @@ const City = new Schema({
             ref: "Activity"
         }
     ],
-    restaurants: [
-        {
-            type: Schema.Types.ObjectId,
-            ref: "Restaurant"
-        }
-    ],
+
 	img: String,
 })
 

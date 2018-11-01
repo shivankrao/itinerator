@@ -216,8 +216,7 @@ const nyc = new City({
 	
     name: "New York City",
 	description: "",
-    activities: [cloisters, smorgasburg, chelseaMarket],
-    restaurants: [Restaurant],
+    activities: [nycAct1, nycAct2, nycAct3],
 	img: "/images/nyc.jpg"
 	})
 
@@ -226,7 +225,6 @@ const atlanta = new City({
     name: "Atlanta",
 	description: "",
     activities: [atlAct1, atlAct2, atlAct3],
-    restaurants: [Restaurant],
 	img: "/images/atlanta.jpg"
     })
     
@@ -235,8 +233,7 @@ const chicago = new City({
         name: "Chicago",
         description: "",
         activities: [chiAct1, chiAct2, chiAct3],
-        restaurants: [Restaurant],
-        img: "images/chicago.jpg"
+        img: "/images/chicago.jpg"
         })
 
 const losAngeles = new City({
@@ -244,8 +241,7 @@ const losAngeles = new City({
         name: "Los Angeles",
         description: "",
         activities: [losAngelesAct1, losAngelesAct2, losAngelesAct3],
-        restaurants: [Restaurant],
-        img: "images/losangeles.jpg"
+        img: "/images/losangeles.jpg"
             })
 
 const paris = new City({
@@ -253,8 +249,7 @@ const paris = new City({
     name: "Paris",
 	description: "",
     activities: [parisAct1, parisAct2, parisAct3],
-    restaurants: [Restaurant],
-	img: "images/paris.jpg"
+	img: "/images/paris.jpg"
     })
     
 const tokyo = new City({
@@ -262,8 +257,7 @@ const tokyo = new City({
     name: "Tokyo",
 	description: "",
     activities: [tokyoAct1, tokyoAct2, tokyoAct3],
-    restaurants: [Restaurant],
-	img: "images/tokyo.jpg"
+	img: "/images/tokyo.jpg"
     })
     
 const madrid = new City({
@@ -271,12 +265,22 @@ const madrid = new City({
     name: "Madrid",
 	description: "",
     activities: [madridAct1, madridAct2, madridAct3],
-    restaurants: [Restaurant],
-	img: "images/madrid.jpg"
+	img: "/images/madrid.jpg"
     })
 
+const john = new User({
 
+    name: "John",
+    username: "johndoe",
+    location: "Madrid",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/John_Krasinski_and_Josh_Wood_%28cropped%29.jpg/220px-John_Krasinski_and_Josh_Wood_%28cropped%29.jpg",
+    activities: [madridAct3]
+    
+})
 
+User.remove({})
+    .then(() => User.deleteMany({}))
+    .then(() => User.insertMany([john]))
 City.remove({})
    .then(() => Activity.deleteMany({}))
    .then(() => Activity.insertMany([nycAct1, nycAct2, nycAct3, atlAct1, atlAct2, atlAct3, chiAct1, chiAct2, chiAct3, losAngelesAct1, losAngelesAct2, losAngelesAct3, parisAct1, parisAct2, parisAct3, tokyoAct1, tokyoAct2, tokyoAct3, madridAct1, madridAct2, madridAct3]))

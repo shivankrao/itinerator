@@ -5,14 +5,12 @@
 
 <br>
 
+
 {{#each cities}}
         <div style = "display:flex" class="city-container">
             <a href="/cities/{{_id}}"><img src="{{img}}" alt=""></a>
             <div class="city-container-info">
                 <a href="/cities/{{_id}}"><h3>{{name}}</h3></a>
-                <p>{{description}}</p>
-                <p>{{activities}}</p>
-                <p>{{restaurants}}</p>
             </div>
         </div>
     {{/each}}

@@ -19,7 +19,7 @@ const cityController = {
 
     show: (req, res) => {
     const citiesId = req.params.citiesId
-    City.findById(citiesId).populate().then((cities) => {
+    City.findById(citiesId).populate("activities").then((cities) => {
       res.render('cities/show', {
         cities: cities, title: 'Itinerator' 
     })

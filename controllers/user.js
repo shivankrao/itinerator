@@ -5,35 +5,38 @@ const User = require('../models/users')
 
 //get users
 const userController = {
-
- index: (req, res) => {
-    User.find({})
-        .then((users) => {
-            res.render('users/index', {title: "Itinerator", users})
+    index: (req, res) => {
+      User.find().then((users) => {
+        res.render('users/index', {title: "Itinerator",
+          users: users
         })
         .catch((err) => {
             console.log(err)
         })
 
-
+    })
 },
 
-// get new user
+// get new user page
 new: (req, res) => {
     res.render('users/new', {title: "Itinerator"})
 },
 
+show: (req, res) => {
+    User.findById(req.params.id).populate("activities").then((users) => {
+        console.log(users)
+      res.render('users/show', {title: "Itinerator",
+        users: users
+      })
+    })
+    // .catch((err) => {
+    //     console.log(err)
+    // })
+  },
+
 // Post New User 
 create: (req, res, next) => {
-    User.create({
-        name: req.body.name,
-        username: req.body.username,
-        age: req.body.age,
-        location: req.body.location,
-        image: req.body.image,
-        favoriteActivity: req.body.favoriteActivity
-    }).then(users => {
-
+    User.create(req.body).then(users => {
     res.redirect(`/users/${users._id}`)
 })
         .catch((error) => {
@@ -46,15 +49,14 @@ edit: (req, res) => {
     User.findById(req.params.id).then(users => {
       res.render('users/edit', { users: users })
     })
-        .catch((err) => {
-            console.log(err)
-        })
+
 },
 
 
 //Update user
 update: (req, res) => {
-    User.findByIdAndUpdate(req.params.id, req.body).then((updatedUser) => {
+    User.findByIdAndUpdate(req.params.usersId, req.body).then((updatedUser) => {
+        updatedUser.save()
       res.redirect(`/users/${updatedUser._id}`)
     })
     .catch((err) => {
@@ -65,10 +67,7 @@ update: (req, res) => {
 //Delete user
 delete: (req, res) => {
     User.findByIdAndRemove(req.params.id).then(() => {
-      res.redirect('/')
-    })
-    .catch((err) => {
-        console.log(err)
+      res.redirect('/users')
     })
   }
 

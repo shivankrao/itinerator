@@ -6,11 +6,11 @@ const User = new Schema({
     username: String,
     location: String,
     image: String,
-    favoriteActivity: [
+    activities: [
         {
             type: Schema.Types.ObjectId,
             ref: "Activity"
-        }
+        }, String
     ]
 })
 module.exports = mongoose.model('User', User)
