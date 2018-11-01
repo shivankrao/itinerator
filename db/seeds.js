@@ -280,9 +280,9 @@ const john = new User({
 
     name: "John",
     username: "johndoe",
-    location: "Madrid",
+    location: "New York City",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/John_Krasinski_and_Josh_Wood_%28cropped%29.jpg/220px-John_Krasinski_and_Josh_Wood_%28cropped%29.jpg",
-    activities: [madridAct3]
+    activities: [nycAct3]
     
 })
 
