@@ -5,15 +5,18 @@
 
 <br>
 
-
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 {{#each cities}}
-        <div style = "display:flex" class="city-container">
-            <a href="/cities/{{_id}}"><img src="{{img}}" alt=""></a>
-            <div class="city-container-info">
-                <a href="/cities/{{_id}}"><h3>{{name}}</h3></a>
+    <div class="hovereffect">
+            <a href="/cities/{{_id}}">
+            <img class="img-responsive" src="{{img}}" alt="">
+            </a>
+            <div class="overlay">
+                <a href="/cities/{{_id}}"><h2>{{name}}</h2></a>
             </div>
         </div>
     {{/each}}
+    </div>
 
 {{!-- <div style = "display:flex">
 {{#each cities}}
