@@ -112,11 +112,29 @@ a {
   transition-delay: .2s;
 }
 
+
+
+
+
+
+
+
 #flexbox {
   row-gap: 20px;
 }
 
 .location {
 color: green 
+
+}
+
+.card-action {
+position: relative;
+left: 70px
+}
+
+.user-link {
+
+  color: black
 
 }

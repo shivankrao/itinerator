@@ -47,6 +47,7 @@ create: (req, res, next) => {
 //Edit user
 edit: (req, res) => {
     User.findById(req.params.id).then(users => {
+        console.log(users)
       res.render('users/edit', { users: users })
     })
 
@@ -59,9 +60,7 @@ update: (req, res) => {
         updatedUser.save()
       res.redirect(`/users/${updatedUser._id}`)
     })
-    .catch((err) => {
-        console.log(err)
-    })
+   
   },
 
 //Delete user

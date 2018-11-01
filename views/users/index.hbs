@@ -1,8 +1,11 @@
 <div class="users-header">
     <h3>Our Users</h3>
 </div>
+
+<div id = "flexbox" class="row">
 <div class="user-dashboard">
     {{#each users}}
+    <div class="col-lg">
     <div>
         <div class="card hoverable">
             <div class=" card-image ">
@@ -12,11 +15,13 @@
                 <div class="card-content ">
                     <p>{{this.bio}}</p>
                 </div>
-                <div class="card-action ">
-                    <a href="/users/{{this._id}}">{{this.name}}</a>
+                <div class="card-action">
+                    <h2><a class="user-link" href="/users/{{this._id}}">{{this.name}}</a></h2>
                 </div>
             </div>
         </div>
     </div>
+    </div>
     {{/each}}
+</div>
 </div>

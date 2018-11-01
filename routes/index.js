@@ -10,7 +10,7 @@ const userController = require('../controllers/user')
 router.get('/', applicationController.index)
 
 //About Page
-router.get('/cities/about', applicationController.show)
+router.get('/about', applicationController.show)
 
 //Add new city page
 router.get('/cities/new', cityController.new)
