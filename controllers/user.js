@@ -56,7 +56,7 @@ edit: (req, res) => {
 
 //Update user
 update: (req, res) => {
-    User.findByIdAndUpdate(req.params.usersId, req.body).then((user) => {
+    User.findByIdAndUpdate(req.params.id, req.body).then((user) => {
         user.save()
       res.redirect(`/users/${user._id}`)
     })

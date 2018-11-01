@@ -10,7 +10,7 @@ const User = new Schema({
         {
             type: Schema.Types.ObjectId,
             ref: "Activity"
-        }, String
+        }, 
     ]
 })
 module.exports = mongoose.model('User', User)

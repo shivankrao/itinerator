@@ -36,9 +36,9 @@ router.post('/users', userController.create)
 //individual users page
 router.get('/users/:id', userController.show)
 //update user page
-router.get('/users/:usersId/edit', userController.edit)
+router.get('/users/:id/edit', userController.edit)
 //update user
-router.patch('/users/:usersId', userController.update)
+router.patch('/users/:id', userController.update)
 //delete user 
 router.delete('/users/:id', userController.delete)
 

@@ -282,7 +282,7 @@ const john = new User({
     username: "johndoe",
     location: "New York City",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/John_Krasinski_and_Josh_Wood_%28cropped%29.jpg/220px-John_Krasinski_and_Josh_Wood_%28cropped%29.jpg",
-    activities: [nycAct3]
+    activities: [nycAct1, nycAct2, nycAct3]
     
 })
 
