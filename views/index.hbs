@@ -5,19 +5,23 @@
 
 <br>
 
-<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+
+      <div id = "flexbox" class="row">
 {{#each cities}}
+<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
     <div class="hovereffect">
             <a href="/cities/{{_id}}">
             <img class="img-responsive" src="{{img}}" alt="">
             </a>
             <div class="overlay">
                 <a href="/cities/{{_id}}"><h2>{{name}}</h2></a>
+                
             </div>
         </div>
+              </div>
     {{/each}}
     </div>
-
+      <br>
 {{!-- <div style = "display:flex">
 {{#each cities}}
 <div class="city-container">

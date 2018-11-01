@@ -111,3 +111,7 @@ a {
   -webkit-transition-delay: .2s;
   transition-delay: .2s;
 }
+
+#flexbox {
+  row-gap: 20px;
+}
