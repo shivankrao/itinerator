@@ -1,6 +1,8 @@
 const mongoose = require('../db/connection')
 const Activity = require('../models/activities')
 const User = require('../models/users')
+const router = express.Router()
+
 const Schema = mongoose.Schema
 
 const City = new Schema({
