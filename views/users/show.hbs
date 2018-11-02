@@ -1,41 +1,33 @@
 <main>
 
-    <h2>Hello {{users.name}}!
+<h2>Hello {{users.name}}!</h2>
 
-    </h2>
+<div class="users-container-show">
 
+<h2 id="users-name">
+</h2>
 
-    <div class="users-container-show">
-        <h2 id="users-name">
+<img src="{{users.image}}" />
 
-
-        </h2>
-
-        <img src="{{users.image}}" />
-
-        <br>
-        <p>
-
-            <h3>{{users.name}} is from {{users.location}}</h3>
+<br>
+<p>
+<h3>{{users.name}} is from {{users.location}}</h3>
 <br>
 <br>
-        </p>
-        <h3>{{users.name}}'s Favorite Activities:</h3>
-        {{#each users.activities}}
-            <h4>{{name}}</h4>
-        {{/each}}
+</p>
+
+<h3>{{users.name}}'s Favorite Activities:</h3>
+    {{#each users.activities}}
+        <h4>{{name}}</h4>
+    {{/each}}
 
 
-
-
-
-        <a href="/users/{{users._id}}/edit"><button type="submit">Update User</button></a>
-
-        <form action="/users/{{users._id}}?_method=DELETE" method="POST">
-            <button type="submit">Delete User</button>
-        </form>
-        <br>
-    </div>
+<a href="/users/{{users._id}}/edit"><button type="submit">Update User</button></a>
+<form action="/users/{{users._id}}?_method=DELETE" method="POST">
+<button type="submit">Delete User</button>
+</form>
+<br>
+</div>
 
 
 </main>

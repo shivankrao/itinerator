@@ -16,7 +16,7 @@ const activityController = {
     },
 
     show: (req, res) => {
-        Wingspot.findById(req.params.activitiesId).then((activities) => {
+        Activity.findById(req.params.activitiesId).then((activities) => {
           res.render('activities/show', {
             activities: activities,
             userId: req.params.id
@@ -31,7 +31,7 @@ const activityController = {
           Activity.create(req.body).then(newActivity=> {
             user.activities.push(newActivity)
             user.save()
-            res.redirect(`/users/${req.params.usersId}/wingspots/${newActivity._id}`)
+            res.redirect(`/users/${req.params.usersId}/activities/${newActivity._id}`)
           })
           })
       },
